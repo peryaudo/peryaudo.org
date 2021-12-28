@@ -13,7 +13,7 @@
   <body>
     <h1>How to Generate a .wav File in C++11</h1>
     <p>December 28, 2021</p>
-    <p>Unless it's compressed, a WAV file generally consists of raw PCM data plus 44 bytes of header, and is a relatively easy format to generate. The following code represents a header for a 44.1Hz 16bit mono WAV file. By changing num_channels, you can make it a header for stereo. The length of the raw PCM data in bytes should be passed as a constructor parameter.</p>
+    <p>Unless it's compressed, a WAV file generally consists of raw PCM data plus 44 bytes of header, and is a relatively easy format to generate. The following code represents a header for a 44.1kHz 16bit mono WAV file. By changing num_channels, you can make it a header for stereo. The length of the raw PCM data in bytes should be passed as a constructor parameter.</p>
 <pre><code class="language-cpp">#include &lt;cstdint&gt;
 
 struct WaveHeader {
