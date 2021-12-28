@@ -13,7 +13,7 @@
   <body>
     <h1>How to Generate a .wav File in C++11</h1>
     <p>December 28, 2021</p>
-    <p>The following generates a header for a 44.1Hz 16bit mono WAV file. By changing num_channels, you can make it a header for stereo. The length of the raw PCM data in bytes should be passed as a constructor parameter.</p>
+    <p>Unless it's compressed, a WAV file generally consists of raw PCM data plus 44 bytes of header, and is a relatively easy format to generate. The following code represents a header for a 44.1Hz 16bit mono WAV file. By changing num_channels, you can make it a header for stereo. The length of the raw PCM data in bytes should be passed as a constructor parameter.</p>
 <pre><code class="language-cpp">#include &lt;cstdint&gt;
 
 struct WaveHeader {
@@ -40,7 +40,7 @@ struct WaveHeader {
   int32_t subchunk2_size;
 };</code></pre>
     <h2>Usage</h2>
-    <p>The following generates 1 second 440Hz sine wave.</p>
+    <p>The following code generates test.wav, which contains 440Hz sine wave for 1 second.</p>
 <pre><code class="language-cpp">#include &lt;cmath&gt;
 #include &lt;vector&gt;
 
