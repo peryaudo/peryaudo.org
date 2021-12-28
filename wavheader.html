@@ -4,13 +4,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>How to Generate a .wav File in C++11</title>
+
+    <link rel="stylesheet" href="highlight/default.min.css">
+    <script src="highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
   </head>
   <body>
     <h1>How to Generate a .wav File in C++11</h1>
     <p>December 28, 2021</p>
-<pre><code>#include &lt;cstdint&gt;
+    <p>The following generates a header for a 44.1Hz 16bit mono WAV file. By changing num_channels, you can make it a header for stereo. The length of the raw PCM data in bytes should be passed as a constructor parameter.</p>
+<pre><code class="language-cpp">#include &lt;cstdint&gt;
 
 struct WaveHeader {
   explicit WaveHeader(int32_t raw_length) {
@@ -36,7 +40,8 @@ struct WaveHeader {
   int32_t subchunk2_size;
 };</code></pre>
     <h2>Usage</h2>
-<pre><code>#include &lt;cmath&gt;
+    <p>The following generates 1 second 440Hz sine wave.</p>
+<pre><code class="language-cpp">#include &lt;cmath&gt;
 #include &lt;vector&gt;
 
 int main(int argc, char *argv[]) {
